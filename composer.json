@@ -18,6 +18,9 @@
         }
     ],
     "autoload": {
+        "files": [
+            'helper.php'
+        ],
         "psr-4": {
             "Sinevia\\Settings\\": "src"
         }
