@@ -1,6 +1,7 @@
 <?php
 
 class PackageSineviaSettingsTablesCreate extends Illuminate\Database\Migrations\Migration {
+
     /**
      * Run the migrations.
      *
@@ -9,7 +10,7 @@ class PackageSineviaSettingsTablesCreate extends Illuminate\Database\Migrations\
     public function up() {
         \Sinevia\Settings\Models\Setting::tableCreate();
     }
-    
+
     /**
      * Reverse the migrations.
      *
@@ -18,4 +19,5 @@ class PackageSineviaSettingsTablesCreate extends Illuminate\Database\Migrations\
     public function down() {
         \Sinevia\Settings\Models\Setting::tableDelete();
     }
+
 }
