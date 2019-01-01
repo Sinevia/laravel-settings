@@ -1,6 +1,6 @@
 <?php
 
-namespace Sinevia\Settings;
+namespace Sinevia\Settings\Models;
 
 class Setting extends \App\Models\BaseModel {
 
