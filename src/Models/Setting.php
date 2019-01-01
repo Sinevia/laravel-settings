@@ -2,10 +2,12 @@
 
 namespace Sinevia\Settings\Models;
 
-class Setting extends \App\Models\BaseModel {
+class Setting extends \AdvancedModel {
 
     protected $table = 'snv_settings_setting';
     protected $primaryKey = 'Id';
+    public $timestamps = true;
+    public $useUniqueId = true;
 
     public static function tableCreate() {
         $o = new Setting;
