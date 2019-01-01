@@ -1,3 +1,5 @@
+<?php
+
 function setting_get($key, $default = null) {
     $setting = \Sinevia\Settings\Setting::where('Key', '=', $key)->first();
     if ($setting == null) {
