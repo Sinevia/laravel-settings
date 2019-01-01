@@ -1,0 +1,35 @@
+{
+    "name": "sinevia/laravel-settings",
+    "type": "library",
+    "description": "Settings for Laravel",
+    "keywords": [
+        "Sinevia",
+        "Laravel",
+        "Meta"
+    ],
+    "homepage": "https://github.com/Sinevia/laravel-settings",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Milan Lesichkov",
+            "email": "lesichkovm@gmail.com",
+            "homepage": "http://lesichkov.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sinevia\\Settings\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sinevia\\Settings\\SettingsServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
