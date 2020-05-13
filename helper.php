@@ -1,19 +1,27 @@
 <?php
 
-function setting_get($key, $default = null) {
-    $setting = \Sinevia\Settings\Setting::where('Key', '=', $key)->first();
-    if ($setting == null) {
-        return $default;
+if (function_exists('setting_get') == false) {
+
+    function setting_get($key, $default = null) {
+        $setting = \Sinevia\Settings\Models\Setting::where('Key', $key)->first();
+        if ($setting == null) {
+            return $default;
+        }
+        return json_decode($setting->Value, true);
     }
-    return json_decode($setting->Value, true);
+
 }
 
-function setting_set($key, $value) {
-    $setting = \Sinevia\Settings\Setting::where('Key', '=', $key)->first();
-    if ($setting == null) {
-        $setting = new \Sinevia\Setting;
-        $setting->Key = $key;
+if (function_exists('setting_set') == false) {
+
+    function setting_set($key, $value) {
+        $setting = \Sinevia\Settings\Models\Setting::where('Key', $key)->first();
+        if ($setting == null) {
+            $setting = new Sinevia\Settings\Models\Setting;
+            $setting->Key = $key;
+        }
+        $setting->Value = json_encode($value);
+        return $setting->save();
     }
-    $setting->Value = json_encode($value);
-    return $setting->save();
+
 }
